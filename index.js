@@ -14,11 +14,16 @@ function runCode (){
 }
 runCode();
 
-function changeImage() {
-  var image = document.getElementById('myImage');
-  if (image.src.match("bulbon")) {
-    image.src = "pic_bulboff.gif";
-  } else {
-    image.src = "pic_bulbon.gif";
-  }
-}
+let myImage = document.getElementById('myImage');
+let buttonSwitch = document.getElementById('switchButton');
+
+buttonSwitch.addEventListener('click',() =>{
+    if(myImage.src.match("bulbon")){
+        myImage.src ="pic_bulboff.gif";
+        buttonSwitch.innerHTML = "Switch on";
+    } else{
+        myImage.src ="pic_bulbon.gif";
+        buttonSwitch.innerHTML = "Switch Off";
+    }
+
+});
